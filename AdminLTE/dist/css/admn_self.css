@@ -1,0 +1,86 @@
+.up-down:before {
+	content: "\f107";
+}
+
+.active .up-down:before {
+	content: "\f106";
+}
+
+.left-right:before {
+	content: "\f105";
+}
+
+.active .left-right:before {
+	content: "\f104";
+}
+
+.treeview-menu .up-down:before {
+	content: "\f107";
+}
+
+.treeview-menu li.active .up-down:before {
+	content: "\f106";
+}
+
+.treeview-menu li.active .treeview-menu .up-down:before {
+	content: "\f107";
+}
+
+.treeview-menu li.active .treeview-menu li.active .up-down:before {
+	content: "\f106";
+}
+
+.content-header.lu-breadcrumb {
+	height: 35px;
+	padding: 5px 15px 0 15px;
+}
+
+.content-header.lu-breadcrumb>.breadcrumb {
+	left: 10px;
+	top: 5px;
+}
+
+.content.lu-content {
+	padding: 5px 10px 5px 10px;
+}
+
+.box.lu-box .box-header {
+	padding: 5px 10px;
+}
+
+.box.lu-box .box-footer {
+	padding: 5px 10px;
+}
+
+table.dataTable.lu-dataTable thead > tr > th{
+	padding: 8px;
+}
+table.dataTable.lu-dataTable tbody > tr > td{
+	padding: 8px;
+}
+table.dataTable.lu-dataTable thead > tr > th label{
+	margin: 0px;
+}
+table.dataTable.lu-dataTable tbody > tr > td label{
+	margin: 0px;
+}
+
+.content.lu-content .pagination{
+	float: left;
+	margin: 0px;
+}
+
+.lu-box .box-header>.box-tools{
+	top:0px;
+}
+
+@media (max-width: 991px) {
+	.content-header.lu-breadcrumb {
+		height: 45px;
+		padding: 5px 10px 0 10px;
+	}
+	.content-header.lu-breadcrumb>.breadcrumb {
+		left: 0px;
+		top: 0px;
+	}
+}
