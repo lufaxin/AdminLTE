@@ -527,15 +527,15 @@
 				<!-- Main content -->
 				<section class="content lu-content">
 					<!-- Default box -->
-					<div class="box lu-box">
-						<div class="box-header with-border">
+					<div id="box_box1" class="box lu-box">
+						<div data-ac="box1_header" class="box-header with-border">
 							<h3 class="box-title">Title</h3>
 							<div class="box-tools pull-right">
 								<button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
 							</div>
 						</div>
-						<div class="box-body">
-							<table id="example1" class="table table-bordered table-striped table-hover lu-dataTable">
+						<div data-ac="box_body" class="box-body">
+							<table data-ac="box_data" class="table table-bordered table-striped table-hover lu-dataTable">
 								<thead>
 									<tr>
 										<th width="25">
@@ -552,76 +552,21 @@
 									</tr>
 								</thead>
 								<tbody>
-									<tr>
-										<td>
-											<label>
-                  				<input type="checkbox" value="1" ac="row_check" class="flat-red">
-                				</label>
-										</td>
-										<td>Trident</td>
-										<td>Internet Explorer 4.0</td>
-										<td>Win 95+</td>
-										<td>4</td>
-										<td>X</td>
-										<td></td>
-									</tr>
-									<tr>
-										<td>
-											<label>
-                  				<input type="checkbox" value="2" ac="row_check" class="flat-red">
-                				</label>
-										</td>
-										<td>Trident</td>
-										<td>Internet Explorer 5.0</td>
-										<td>Win 95+</td>
-										<td>5</td>
-										<td>C</td>
-										<td></td>
-									</tr>
-									<tr>
-										<td>
-											<label>
-                  				<input type="checkbox" value="3" ac="row_check" class="flat-red">
-                				</label>
-										</td>
-										<td>Trident</td>
-										<td>Internet Explorer 5.5</td>
-										<td>Win 95+</td>
-										<td>5.5</td>
-										<td>A</td>
-										<td></td>
-									</tr>
-									<tr>
-										<td>
-											<label>
-                  				<input type="checkbox" value="4" ac="row_check" class="flat-red">
-                				</label>
-										</td>
-										<td>Trident</td>
-										<td>Internet Explorer 6</td>
-										<td>Win 98+</td>
-										<td>6</td>
-										<td>A</td>
-										<td></td>
-									</tr>
-									<tr>
-										<td>
-											<label>
-                  				<input type="checkbox" value="5" ac="row_check" class="flat-red">
-                				</label>
-										</td>
-										<td>Trident</td>
-										<td>Internet Explorer 7</td>
-										<td>Win XP SP2+</td>
-										<td>7</td>
-										<td>A</td>
-										<td></td>
-									</tr>
+
 								</tbody>
+								<tfoot>
+									<tr>
+										<td colspan="7">
+											<a class="btn btn-social btn-primary btn-sm">
+												<i class="fa fa-plus"></i> 新增
+											</a>
+										</td>
+									</tr>
+								</tfoot>
 							</table>
 						</div>
 						<!-- /.box-body -->
-						<div class="box-footer">
+						<div data-ac="box_footer" class="box-footer">
 							<div class="dataTables_paginate paging_simple_numbers">
 								<ul class="pagination">
 									<li class="paginate_button previous disabled" id="example1_previous">
@@ -658,16 +603,39 @@
 				<!-- /.content -->
 			</div>
 			<!-- /.content-wrapper -->
-			<!--
-			<footer class="main-footer">
-				<div class="pull-right hidden-xs">
-					<b>Version</b> 2.0
-				</div>
-				<strong>Copyright &copy; 2014-2015 <a href="http://www.mycodes.net">Almsaeed Studio</a>.</strong> All rights reserved.
-			</footer>
-			 -->
-			<!-- /.control-sidebar -->
 		</div>
+		<script id="box_item" type="text/x-jquery-tmpl">
+			<tr>
+				<td>
+					<label>
+      					<input type="checkbox" value="{{= lan0.id}}" ac="row_check" class="flat-red">
+					</label>
+				</td>
+				<td>{{= lan0.name}}</td>
+				<td>{{= lan0.name}}</td>
+				<td>{{= lan0.name}}</td>
+				<td>{{= lan0.name}}</td>
+				<td>{{= lan0.name}}</td>
+				<td>
+					<button btn-ac="edit" type="button" class="btn btn-primary btn-xs"><i class="fa fa-edit"></i>编辑</button>
+					<button btn-ac="del" type="button" class="btn btn-primary btn-xs"><i class="fa fa-remove"></i>删除</button>
+				</td>
+			</tr>
+		</script>
+		<script id="box_loading" type="text/x-jquery-tmpl">
+			<tr>
+				<td colspan="7" class="loading">
+					<i class="fa fa-fw fa-spin fa-spinner loading"></i>
+				</td>
+			</tr>
+		</script>
+		<script id="box_none" type="text/x-jquery-tmpl">
+			<tr>
+				<td colspan="7" class="none">
+					暂无数据
+				</td>
+			</tr>
+		</script>
 		<!-- ./wrapper -->
 		<!-- jQuery 2.2.3 -->
 		<script src="../../plugins/jQuery/jquery-2.2.3.min.js"></script>
@@ -685,21 +653,13 @@
 		<script src="../../dist/js/demo.js"></script>
 		<!-- iCheck 1.0.1 -->
 		<script src="../../plugins/iCheck/icheck.min.js"></script>
-		<script src="../../plugins/lu-table/lu-table.js"></script>
+		<script src="../../plugins/lu-table/lu-check.js"></script>
 		<script src="../../dist/js/lu-app.js"></script>
-		<script src="../../dist/js/lu-data.js"></script>
+		<script src="../../plugins/lu-table/lu-data.js"></script>
+		<script src="../../plugins/lu-table/lu-action.js"></script>
 		<script>
 			$(function() {
-				$("#example1").DataTable({
-					"searching": false,
-					"lengthChange": false,
-					"ordering": false,
-					"autoWidth": false,
-					"info": false,
-					"paging": false
-				});
-
-				$lu_table.init($("#example1"));
+				$lu_check.init($("#box_box1").find("[data-ac=box_data]"));
 			});
 		</script>
 	</body>

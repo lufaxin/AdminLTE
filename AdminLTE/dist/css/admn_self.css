@@ -52,26 +52,43 @@
 	padding: 5px 10px;
 }
 
-table.dataTable.lu-dataTable thead > tr > th{
-	padding: 8px;
+table.lu-dataTable {
+	border-color: #ededed!important;
 }
-table.dataTable.lu-dataTable tbody > tr > td{
-	padding: 8px;
+
+table.lu-dataTable thead> tr> th {
+	padding: 6px 5px;
+	border-color: #ededed!important;
+	vertical-align: top;
 }
-table.dataTable.lu-dataTable thead > tr > th label{
-	margin: 0px;
+
+table.lu-dataTable tbody> tr> td {
+	padding: 6px 5px;
+	border-color: #ededed!important;
+	vertical-align: top;
 }
-table.dataTable.lu-dataTable tbody > tr > td label{
+
+table.lu-dataTable thead> tr> th label {
 	margin: 0px;
 }
 
-.content.lu-content .pagination{
+table.lu-dataTable tbody> tr> td label {
+	margin: 0px;
+}
+
+.content.lu-content .pagination {
 	float: left;
 	margin: 0px;
 }
 
-.lu-box .box-header>.box-tools{
-	top:0px;
+.lu-box .box-header>.box-tools {
+	top: 0px;
+}
+
+table.lu-dataTable tbody> tr> td.none {
+	text-align: center;
+	vertical-align: middle;
+	height: 25px;
 }
 
 @media (max-width: 991px) {
